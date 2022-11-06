@@ -1,0 +1,1 @@
+enum SnackBarType {red, yellow, blue}
