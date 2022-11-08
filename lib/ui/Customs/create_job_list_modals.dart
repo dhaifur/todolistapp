@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
 class CreateJobListModals extends StatefulWidget {
   final titleController;
@@ -20,8 +21,7 @@ class CreateJobListModals extends StatefulWidget {
       this.close});
 
   @override
-  State<CreateJobListModals> createState() =>
-      _CreateJobListModalsState();
+  State<CreateJobListModals> createState() => _CreateJobListModalsState();
 }
 
 class _CreateJobListModalsState extends State<CreateJobListModals> {
@@ -30,6 +30,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
     return new Scaffold(
         body: ListView(children: [
       Container(
+        height: 39.5.h,
         decoration: const BoxDecoration(
           color: Colors.blueAccent,
           borderRadius: BorderRadius.only(
@@ -38,7 +39,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 20, 15, 0),
+          padding: EdgeInsets.symmetric(vertical: 3.5.h),
           child: Column(
             children: [
               Row(
@@ -54,27 +55,24 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                       )),
                 ],
               ),
-              Icon(Icons.create_new_folder_outlined,
-                  size: 100, color: Colors.white),
-              SizedBox(
-                height: 20,
+              Icon(
+                Icons.create_new_folder_outlined,
+                size: 25.w,
+                color: Colors.white,
               ),
               Center(
                 child: Text("Create Job List",
                     style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 25.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white)),
-              ),
-              SizedBox(
-                height: 20,
               ),
             ],
           ),
         ),
       ),
       SizedBox(
-        height: 35,
+        height: 2.h,
       ),
       Padding(
         padding: const EdgeInsets.all(8.0),
@@ -101,8 +99,8 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                 hintText: "Input Title",
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 2.h,
             ),
             TextFormField(
               keyboardType: TextInputType.multiline,
@@ -127,8 +125,8 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                 hintText: "Input Description",
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 2.h,
             ),
             TextFormField(
               controller: widget.dateController,
@@ -160,8 +158,8 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                   icon: Icon(Icons.calendar_today),
                   hintText: "Input Job Date"),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 2.h,
             ),
             TextFormField(
               controller: widget.timeController,
@@ -190,8 +188,8 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                   icon: Icon(Icons.watch_later_outlined),
                   hintText: "Input When The Job Must Done"),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 2.h,
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
@@ -204,9 +202,6 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                   fontSize: 18,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
             ),
           ],
         ),

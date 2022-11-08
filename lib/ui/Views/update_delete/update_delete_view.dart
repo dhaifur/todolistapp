@@ -2,6 +2,7 @@ import 'package:crud_project/ui/Views/update_delete/update_delete_viewmodel.dart
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../app/model/activities_model.dart';
 
@@ -29,11 +30,11 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+          padding: EdgeInsets.symmetric(vertical: 0.h, horizontal: 0.w),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
+                height: 43.h,
                 decoration: const BoxDecoration(
                   color: Colors.blueAccent,
                   borderRadius: BorderRadius.only(
@@ -42,33 +43,29 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 125, 15, 0),
+                  padding: EdgeInsets.symmetric(vertical: 10.2.h),
                   child: Column(
                     children: [
                       Icon(
                         Icons.edit,
-                        size: 60,
+                        size: 25.w,
                         color: Colors.white,
                       ),
-                      SizedBox(height: 25),
                       Center(
                           child: Text(
                         'Edit Activity',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30,
+                          fontSize: 25.sp,
                         ),
                       )),
-                      const SizedBox(
-                        height: 20,
-                      ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 2.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -95,8 +92,8 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                         hintText: "Input Title",
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
                     TextFormField(
                       keyboardType: TextInputType.multiline,
@@ -121,8 +118,8 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                         hintText: "Input Description",
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
                     TextFormField(
                       controller: viewModel.dateController,
@@ -154,8 +151,8 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                           icon: Icon(Icons.calendar_today),
                           hintText: "Input Job Date"),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
                     TextFormField(
                       controller: viewModel.timeController,
@@ -183,8 +180,8 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                           icon: Icon(Icons.watch_later_outlined),
                           hintText: "Input When The Job Must Done"),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
                     Row(
                       children: [
