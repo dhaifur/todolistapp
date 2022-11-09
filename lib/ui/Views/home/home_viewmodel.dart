@@ -23,7 +23,7 @@ class HomeViewModel extends BaseViewModel {
       _navigationServices.navigateTo(Routes.updateDeleteView,
           arguments: UpdateDeleteViewArguments(id: id, activity: activity));
 
-  goLoginPage() => _navigationServices.replaceWith(Routes.loginPageView);
+  goLoginPage() => _navigationServices.clearStackAndShow(Routes.loginPageView);
 
   Future<Activity?> getActivity() async {
     try {
