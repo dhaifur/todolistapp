@@ -1,8 +1,8 @@
 import 'package:crud_project/ui/Views/register/register_viewmodel.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
-import 'package:sizer/sizer.dart';
 
 class RegisterView extends ViewModelBuilderWidget<RegisterViewModel> {
   @override
@@ -12,13 +12,14 @@ class RegisterView extends ViewModelBuilderWidget<RegisterViewModel> {
   @override
   Widget builder(
       BuildContext context, RegisterViewModel viewModel, Widget? child) {
+    ScreenUtil.init(context, designSize: const Size(360, 690));
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 38.h,
+              height: 263.h,
               decoration: const BoxDecoration(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.only(
@@ -27,13 +28,13 @@ class RegisterView extends ViewModelBuilderWidget<RegisterViewModel> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.only(top: 7.h),
+                padding: EdgeInsets.only(top: 50.h),
                 child: Column(
                   children: [
                     Center(
                         child: Icon(
                       Icons.account_box_rounded,
-                      size: 30.w,
+                      size: 100.w,
                       color: Colors.white,
                     )),
                     Center(

@@ -1,8 +1,8 @@
 import 'package:crud_project/ui/Views/login/login_page_viewmodel.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
-import 'package:sizer/sizer.dart';
 
 class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
   const LoginPageView({Key? key}) : super(key: key);
@@ -19,12 +19,13 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
   @override
   Widget builder(
       BuildContext context, LoginPageViewModel viewModel, Widget? child) {
+    ScreenUtil.init(context, designSize: const Size(360, 690));
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: 60.h,
+              height: 400.h,
               decoration: const BoxDecoration(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.only(
@@ -33,14 +34,14 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 4.h),
+                padding: EdgeInsets.only(top: 45.h),
                 child: Column(
                   children: [
                     Center(
                       child: Image.asset(
                         "assets/4630.png",
-                        width: 89.w,
-                        height: 37.h,
+                        width: 300.w,
+                        height: 250.h,
                       ),
                     ),
                     Center(
@@ -49,7 +50,7 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30.sp,
+                          fontSize: 25.sp,
                         ),
                       ),
                     ),
@@ -66,16 +67,13 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 1.5.h,
-            ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 1.h),
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    height: 1.5.h,
+                    height: 25.h,
                   ),
                   TextFormField(
                     controller: viewModel.emailController,
@@ -105,7 +103,7 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
                             : null,
                   ),
                   SizedBox(
-                    height: 1.5.h,
+                    height: 15.h,
                   ),
                   TextFormField(
                     controller: viewModel.passwordController,
@@ -139,7 +137,7 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
                         : null,
                   ),
                   SizedBox(
-                    height: 1.5.h,
+                    height: 15.h,
                   ),
                   ElevatedButton(
                     style: TextButton.styleFrom(
@@ -154,7 +152,7 @@ class LoginPageView extends ViewModelBuilderWidget<LoginPageViewModel> {
                     ),
                   ),
                   SizedBox(
-                    height: 1.h,
+                    height: 7.h,
                   ),
                   Row(
                     children: [

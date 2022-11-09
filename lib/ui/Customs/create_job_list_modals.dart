@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:sizer/sizer.dart';
 
 class CreateJobListModals extends StatefulWidget {
   final titleController;
@@ -27,10 +27,11 @@ class CreateJobListModals extends StatefulWidget {
 class _CreateJobListModalsState extends State<CreateJobListModals> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(360, 690));
     return new Scaffold(
         body: ListView(children: [
       Container(
-        height: 39.5.h,
+        height: 237.h,
         decoration: const BoxDecoration(
           color: Colors.blueAccent,
           borderRadius: BorderRadius.only(
@@ -39,7 +40,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 3.5.h),
+          padding: EdgeInsets.symmetric(vertical: 5.h),
           child: Column(
             children: [
               Row(
@@ -57,7 +58,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
               ),
               Icon(
                 Icons.create_new_folder_outlined,
-                size: 25.w,
+                size: 100.w,
                 color: Colors.white,
               ),
               Center(
@@ -72,7 +73,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
         ),
       ),
       SizedBox(
-        height: 2.h,
+        height: 5.h,
       ),
       Padding(
         padding: const EdgeInsets.all(8.0),
@@ -100,7 +101,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
               ),
             ),
             SizedBox(
-              height: 2.h,
+              height: 10.h,
             ),
             TextFormField(
               keyboardType: TextInputType.multiline,
@@ -126,7 +127,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
               ),
             ),
             SizedBox(
-              height: 2.h,
+              height: 10.h,
             ),
             TextFormField(
               controller: widget.dateController,
@@ -159,7 +160,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                   hintText: "Input Job Date"),
             ),
             SizedBox(
-              height: 2.h,
+              height: 10.h,
             ),
             TextFormField(
               controller: widget.timeController,
@@ -189,7 +190,7 @@ class _CreateJobListModalsState extends State<CreateJobListModals> {
                   hintText: "Input When The Job Must Done"),
             ),
             SizedBox(
-              height: 2.h,
+              height: 10.h,
             ),
             ElevatedButton(
               style: TextButton.styleFrom(

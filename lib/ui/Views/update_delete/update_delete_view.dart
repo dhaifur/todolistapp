@@ -1,8 +1,8 @@
 import 'package:crud_project/ui/Views/update_delete/update_delete_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 import 'package:intl/intl.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../app/model/activities_model.dart';
 
@@ -27,12 +27,13 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
   @override
   Widget builder(
       BuildContext context, UpdateDeleteViewModel viewModel, Widget? child) {
+    ScreenUtil.init(context, designSize: Size(360, 690));
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: 43.h,
+              height: 263.h,
               decoration: const BoxDecoration(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.only(
@@ -41,12 +42,12 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.2.h),
+                padding: EdgeInsets.symmetric(vertical: 70.h),
                 child: Column(
                   children: [
                     Icon(
                       Icons.edit,
-                      size: 25.w,
+                      size: 60.w,
                       color: Colors.white,
                     ),
                     Center(
@@ -63,12 +64,11 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
               ),
             ),
             SizedBox(
-              height: 2.h,
+              height: 5.h,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextFormField(
                     controller: viewModel.titleController,
@@ -91,7 +91,7 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                     ),
                   ),
                   SizedBox(
-                    height: 2.h,
+                    height: 10.h,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.multiline,
@@ -117,7 +117,7 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                     ),
                   ),
                   SizedBox(
-                    height: 2.h,
+                    height: 10.h,
                   ),
                   TextFormField(
                     controller: viewModel.dateController,
@@ -150,7 +150,7 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                         hintText: "Input Job Date"),
                   ),
                   SizedBox(
-                    height: 2.h,
+                    height: 10.h,
                   ),
                   TextFormField(
                     controller: viewModel.timeController,
@@ -179,7 +179,7 @@ class UpdateDeleteView extends ViewModelBuilderWidget<UpdateDeleteViewModel> {
                         hintText: "Input When The Job Must Done"),
                   ),
                   SizedBox(
-                    height: 2.h,
+                    height: 10.h,
                   ),
                   Row(
                     children: [
