@@ -60,7 +60,9 @@ class HomeView extends ViewModelBuilderWidget<HomeViewModel> {
                   var activity = viewModel.listActivity[index];
                   return CardMaxWidth(
                     title: '${activity.title!}',
-                    description: '${activity.description!}',
+                    description: activity.description!.length > 90
+                        ? '${activity.description!.substring(0, 90)}...'
+                        : '${activity.description!}',
                     date: '${activity.date!}',
                     time: '${activity.time!}',
                     edit: () {
